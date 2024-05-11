@@ -4,6 +4,8 @@ import Image from "@/Components/Image.vue";
 import NavLink from "@/Components/NavLink.vue";
 import {ref} from "vue";
 import {list} from "postcss";
+import PrimaryButton from "@/Components/PrimaryButton.vue";
+import TextInput from "@/Components/TextInput.vue";
 
 defineProps({
     canLogin: {
@@ -128,8 +130,26 @@ getDoctors(listDoctors);
                 </div>
             </div>
         </div>
+        <div class="w-full flex flex-col mt-6 px-6 py-4 bg-white overflow-hidden mb-[40px]">
+            <div>
+                <div class="text-xl text-slate-700 mb-2 flex">
+                    <h2 class="mr-[10px]">Запишитесь на приём к врачу <span class="font-bold">по номеру телефона</span></h2>
+                    <img src="storage/icons/phone_k28gzysaoljv.svg" class="w-[25px]">
+                </div>
+                <div class="text-slate-700 mb-3">
+                    Оставьте свой номер телефона, и мы вам перезвоним в кратчайшие сроки
+                </div>
+            </div>
+            <div class="flex justify-between max-w-xl m-auto">
+                <TextInput placeholder="89998884422" class="mr-4" model-value=""></TextInput>
+                <button class="bg-blue-700 px-5 py-3 mr-2 text-base text-white rounded-[10px]">
+                    Отправить
+                </button>
+            </div>
+
+        </div>
         <div class="footer text-slate-600 mb-[60px]">
-            <h3 class="footer-text text-xl">Подберите нужного вам врача и <a class="bg-blue-700 px-5 py-3 mr-2 text-base text-white rounded-[10px]" :href="route('login')">Запишитесь</a>на прием <span class="font-bold">онлайн</span></h3>
+            <h3 class="footer-text text-xl">Подберите нужного вам врача и <a class="bg-blue-700 px-5 py-3 mr-2 text-base text-white rounded-[10px]" :href="route('login')">Запишитесь</a>на прием <span class="font-bold text-green-600">онлайн</span></h3>
         </div>
     </main>
 </template>

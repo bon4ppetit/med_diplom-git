@@ -19,12 +19,12 @@ getOldRecords();
         </div>
         <br>
         <template v-for="record in listRecords">
-            <div class="px-5 py-3 border-2 flex mb-2 items-center justify-between max-w-[800px] m-auto">
-                <div class="records_user-info flex max-w-[350px] flex-auto justify-between">
+            <div class="px-5 py-3 border-2 w-full flex mb-2 items-center justify-between max-w-[800px] m-auto">
+                <div class="records_user-info flex flex-auto justify-between">
                     <div class="text-center mr-5">{{ record.surname }} {{ record.name }} {{ record.patronymic }}</div>
-                    <div class="text-center">Дата: {{ record.record_date }}</div>
-                    <div class="text-center">Кабинет: {{ record.number_room }}</div>
-                    <div class="text-center">Время: {{ record.record_time }}</div>
+                    <div class="text-center"><span class="text-slate-500">Дата:</span> {{ record.record_date }}</div>
+                    <div class="text-center"><span class="text-slate-500">Кабинет:</span> {{ record.number_room }}</div>
+                    <div class="text-center"><span class="text-slate-500">Время:</span> {{ record.record_time }}</div>
                 </div>
             </div>
         </template>

@@ -26,7 +26,7 @@ class RecordToDoctor extends Model
         $records = DB::table('records_to_doctor')
             ->where('records_to_doctor.client_id', auth()->user()->id)
             ->whereNull('records_to_doctor.deleted_at')
-            ->join('doctors', 'client_id', '=', 'doctors.id')
+            ->join('doctors', 'doctor_id', '=', 'doctors.id')
             ->join('users', 'doctor_id', '=', 'users.id')
             ->select('records_to_doctor.id', 'users.name', 'users.surname', 'users.patronymic', 'doctors.number_room', 'records_to_doctor.record_datetime')
             ->get();
@@ -45,7 +45,7 @@ class RecordToDoctor extends Model
         $records = DB::table('records_to_doctor')
             ->where('records_to_doctor.client_id', auth()->user()->id)
             ->where('records_to_doctor.deleted_at', '!=', 'null')
-            ->join('doctors', 'client_id', '=', 'doctors.id')
+            ->join('doctors', 'doctor_id', '=', 'doctors.id')
             ->join('users', 'doctor_id', '=', 'users.id')
             ->select('records_to_doctor.id', 'users.name', 'users.surname', 'users.patronymic', 'doctors.number_room', 'records_to_doctor.record_datetime')
             ->get();
